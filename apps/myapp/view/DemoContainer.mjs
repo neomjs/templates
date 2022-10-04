@@ -17,22 +17,30 @@ class DemoContainer extends Base {
          * @member {Object[]} items
          */
         items: [{
-            module       : NumberField,
-            flex         : 'none',
+            module              : NumberField,
+            clearToOriginalValue: true,
+            flag                : 'box1',
+            flex                : 'none',
             //labelPosition: 'inline', // todo: broken
-            labelText    : 'box1',
-            labelWidth   : 50,
-            value        : 0
+            labelText           : 'box1',
+            labelWidth          : 50,
+            listeners           : {change: 'onBoxFieldChange'},
+            value               : 0,
+            width               : 150
         }, {
-            module       : NumberField,
-            flex         : 'none',
-            //labelPosition: 'inline', // todo: broken
-            labelText    : 'box2',
-            labelWidth   : 50,
-            value        : 0
+            module              : NumberField,
+            clearToOriginalValue: true,
+            flag                : 'box2',
+            flex                : 'none',
+            labelText           : 'box2',
+            labelWidth          : 50,
+            listeners           : {change: 'onBoxFieldChange'},
+            value               : 0,
+            width               : 150
         }, {
-            module: TemplateComponent,
-            style : {marginTop: '10px'}
+            module   : TemplateComponent,
+            reference: 'template-component',
+            style    : {marginTop: '10px'}
         }],
         /**
          * @member {Object} layout

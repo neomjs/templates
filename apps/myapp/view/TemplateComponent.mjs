@@ -28,7 +28,7 @@ class TemplateComponent extends Base {
      * @protected
      */
     afterSetBox1(value, oldValue) {
-        this.updateVdom();
+        this.generateVdom();
     }
 
     /**
@@ -38,13 +38,13 @@ class TemplateComponent extends Base {
      * @protected
      */
     afterSetBox2(value, oldValue) {
-        this.updateVdom();
+        this.generateVdom();
     }
 
     /**
      *
      */
-    updateVdom() {
+    generateVdom() {
         let me = this,
             box1 = me.box1,
             box2 = me.box2,
