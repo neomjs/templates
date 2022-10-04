@@ -21,22 +21,21 @@ class DemoContainer extends Base {
             clearToOriginalValue: true,
             flag                : 'box1',
             flex                : 'none',
-            //labelPosition: 'inline', // todo: broken
+            labelPosition       : 'inline',
             labelText           : 'box1',
-            labelWidth          : 50,
             listeners           : {change: 'onBoxFieldChange'},
             value               : 0,
-            width               : 150
+            width               : 200
         }, {
             module              : NumberField,
             clearToOriginalValue: true,
             flag                : 'box2',
             flex                : 'none',
+            labelPosition       : 'inline',
             labelText           : 'box2',
-            labelWidth          : 50,
             listeners           : {change: 'onBoxFieldChange'},
             value               : 0,
-            width               : 150
+            width               : 200
         }, {
             module   : TemplateComponent,
             reference: 'template-component',
