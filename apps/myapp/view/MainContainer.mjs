@@ -1,4 +1,5 @@
-import Viewport from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
+import DemoContainer from './DemoContainer.mjs';
+import Viewport      from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
 
 /**
  * @class MyApp.view.MainContainer
@@ -18,7 +19,10 @@ class MainContainer extends Viewport {
         /**
          * @member {Object[]} items
          */
-        items: []
+        items: [{
+            module: DemoContainer,
+            style : {margin: '20px'}
+        }]
     }}
 }
 
