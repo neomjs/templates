@@ -25,7 +25,7 @@ class DemoContainer extends Base {
             labelText           : 'box1',
             listeners           : {change: 'onBoxFieldChange'},
             value               : 0,
-            width               : 200
+            width               : 100
         }, {
             module              : NumberField,
             clearToOriginalValue: true,
@@ -35,7 +35,7 @@ class DemoContainer extends Base {
             labelText           : 'box2',
             listeners           : {change: 'onBoxFieldChange'},
             value               : 0,
-            width               : 200
+            width               : 100
         }, {
             module   : TemplateComponent,
             reference: 'template-component',
