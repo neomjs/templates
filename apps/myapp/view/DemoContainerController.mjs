@@ -1,16 +1,16 @@
 import Component from '../../../node_modules/neo.mjs/src/controller/Component.mjs';
 
 /**
- * @class MyApp.view.MainContainerController
+ * @class MyApp.view.DemoContainerController
  * @extends Neo.controller.Component
  */
-class MainContainerController extends Component {
+class DemoContainerController extends Component {
     static getConfig() {return {
         /**
-         * @member {String} className='MyApp.view.MainContainerController'
+         * @member {String} className='MyApp.view.DemoContainerController'
          * @protected
          */
-        className: 'MyApp.view.MainContainerController'
+        className: 'MyApp.view.DemoContainerController'
     }}
 
     /**
@@ -22,6 +22,6 @@ class MainContainerController extends Component {
     }
 }
 
-Neo.applyClassConfig(MainContainerController);
+Neo.applyClassConfig(DemoContainerController);
 
-export default MainContainerController;
+export default DemoContainerController;

@@ -1,6 +1,7 @@
-import DemoContainer           from './DemoContainer.mjs';
-import MainContainerController from './MainContainerController.mjs';
-import Viewport                from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
+import DemoContainer      from './DemoContainer.mjs';
+import TemplateComponent  from './TemplateComponent.mjs';
+import TemplateComponent2 from './TemplateComponent2.mjs';
+import Viewport           from '../../../node_modules/neo.mjs/src/container/Viewport.mjs';
 
 /**
  * @class MyApp.view.MainContainer
@@ -18,16 +19,21 @@ class MainContainer extends Viewport {
          */
         autoMount: true,
         /**
-         * @member {Neo.controller.Component} controller=MainContainerController
-         */
-        controller: MainContainerController,
-        /**
          * @member {Object[]} items
          */
         items: [{
-            module: DemoContainer,
-            style : {margin: '20px'}
-        }]
+            module     : DemoContainer,
+            childModule: TemplateComponent,
+            style      : {margin: '20px'}
+        }, {
+            module     : DemoContainer,
+            childModule: TemplateComponent2,
+            style      : {margin: '20px'}
+        }],
+        /**
+         * @member {Object} layout
+         */
+        layout: {ntype: 'vbox', align: 'start'}
     }}
 }
 

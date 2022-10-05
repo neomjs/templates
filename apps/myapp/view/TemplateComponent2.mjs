@@ -1,5 +1,4 @@
-import Base     from '../../../node_modules/neo.mjs/src/component/Base.mjs';
-import VdomUtil from '../../../node_modules/neo.mjs/src/util/VDom.mjs';
+import Base from '../../../node_modules/neo.mjs/src/component/Base.mjs';
 
 /**
  * @class MyApp.view.TemplateComponent2
@@ -30,6 +29,16 @@ class TemplateComponent2 extends Base {
                 {tag: 'span'},
                 {tag: 'span'}
             ]},
+            {tag: 'table', cn: [
+                {tag: 'tr', cn: [
+                    {tag: 'td', cn: [
+                        {tag: 'span', html: 'less than one'}
+                    ]},
+                    {tag: 'td', cn: [
+                        {tag: 'span', flag: 'division'}
+                    ]}
+                ]}
+            ]},
             {html: 'Container'} // todo
         ]}
     }}
@@ -51,24 +60,24 @@ class TemplateComponent2 extends Base {
      * @protected
      */
     afterSetBox2(value, oldValue) {
-        this.adjustVdom();
+        Neo.isNumber(oldValue) && this.adjustVdom();
     }
 
     /**
      *
      */
     adjustVdom() {
-        let me   = this,
-            box1 = me.box1,
-            box2 = me.box2,
-            vdom = me.vdom;
+        let me          = this,
+            box1        = me.box1,
+            box2        = me.box2,
+            activeIndex = box2 === 0 ? 0 : box1 > box2 ? 1 : box1 < box2 ? 2 : 3,
+            vdom        = me.vdom;
 
-        vdom.cn[0].removeDom = box2 !== 0;
-        vdom.cn[1].removeDom = box1 < box2;
-        vdom.cn[2].removeDom = box1 > box2;
+        vdom.cn.forEach((item, index) => {
+            item.removeDom = activeIndex !== index;
+        });
 
-        VdomUtil.findVdomChild({flag: 'division'}).vdom.html = box1 / box2;
-
+        me.getVdomChild({flag: 'division'}).html = box1 / box2;
         me.vdom = vdom;
     }
 }

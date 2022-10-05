@@ -1,6 +1,6 @@
-import Base              from '../../../node_modules/neo.mjs/src/container/Base.mjs';
-import NumberField       from '../../../node_modules/neo.mjs/src/form/field/Number.mjs';
-import TemplateComponent from './TemplateComponent.mjs';
+import Base                    from '../../../node_modules/neo.mjs/src/container/Base.mjs';
+import DemoContainerController from './DemoContainerController.mjs';
+import NumberField             from '../../../node_modules/neo.mjs/src/form/field/Number.mjs';
 
 /**
  * @class MyApp.view.DemoContainer
@@ -13,6 +13,14 @@ class DemoContainer extends Base {
          * @protected
          */
         className: 'MyApp.view.DemoContainer',
+        /**
+         * @member {Neo.component.Base|null} childModule=null
+         */
+        childModule: null,
+        /**
+         * @member {Neo.controller.Component} controller=DemoContainerController
+         */
+        controller: DemoContainerController,
         /**
          * @member {Object[]} items
          */
@@ -37,7 +45,7 @@ class DemoContainer extends Base {
             value               : 0,
             width               : 100
         }, {
-            module   : TemplateComponent,
+            module   : '@config:childModule',
             reference: 'template-component',
             style    : {marginTop: '10px'}
         }],
