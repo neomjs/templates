@@ -84,6 +84,11 @@ class TemplateComponent2 extends Base {
             item.removeDom = activeIndex !== index;
         });
 
+        //direct access
+        vdom.cn[1].cn[0].html = box1;
+        vdom.cn[1].cn[1].html = box2;
+
+        // query for nodes
         me.getVdomChild({flag: 'division'}).html = box1 / box2;
         me.vdom = vdom;
     }
