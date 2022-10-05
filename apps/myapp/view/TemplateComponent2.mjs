@@ -24,11 +24,16 @@ class TemplateComponent2 extends Base {
          */
         vdom:
         {cn: [
+            // box2 === 0
             {html: 'can not divide by 0'},
+
+            // box1 > box2
             {tag: 'p', cn: [
                 {tag: 'span'},
                 {tag: 'span'}
             ]},
+
+            // box1 < box2
             {tag: 'table', cn: [
                 {tag: 'tr', cn: [
                     {tag: 'td', cn: [
@@ -39,7 +44,9 @@ class TemplateComponent2 extends Base {
                     ]}
                 ]}
             ]},
-            {html: 'Container'} // todo
+
+            // else todo
+            {html: 'Container'}
         ]}
     }}
 
